@@ -25,6 +25,15 @@ Exams Create
         <label for="">Address</label>
         <input name="address" type="text" class="form-control">
     </div>
+    <div class="mb-3">
+        <label for="">Courses</label>
+        <select class="form-control" name="courses_id" id="">
+            <option value="">-- Seleziona il corso --</option>
+            @foreach ($courses as $course)
+                <option value="{{$course->id}}">{{$course->name}}</option>
+            @endforeach
+        </select>
+    </div>
 
     <button class="btn btn-primary">Crea</button>
 
