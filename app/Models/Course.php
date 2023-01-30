@@ -18,6 +18,6 @@ class Course extends Model
     ];
 
     public function exams(){
-        return $this->hasMany('App/Models/Exam');
+        return $this->hasMany('App\Models\Exam');
     }
 }

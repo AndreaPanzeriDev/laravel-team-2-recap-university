@@ -29,10 +29,9 @@ Exams Edit
     <div class="mb-3">
         <label for="">Courses</label>
         <select class="form-control" name="courses_id" id="">
-            <option value="">-- Seleziona il corso --</option>
             @foreach ($courses as $course)
                 <option value="{{$course->id}}">
-                    {{$course->id == old('courses_id', $exams->courses_id) ? 'selected' : ''}}
+                    {{$course->id == old('courses_id', $elem->courses_id) ? 'selected' : ''}}
                     {{$course->name}}
                 </option>
             @endforeach

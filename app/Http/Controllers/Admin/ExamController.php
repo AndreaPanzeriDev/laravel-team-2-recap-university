@@ -73,7 +73,8 @@ class ExamController extends Controller
     public function edit($id)
     {
         $elem = Exam::findOrFail($id);
-        return view('admin.exams.edit', compact('elem'));
+        $courses = Course::All();
+        return view('admin.exams.edit', compact('elem', 'courses'));
     }
 
     /**
@@ -89,6 +90,13 @@ class ExamController extends Controller
         $elem = Exam::findOrFail($id);
 
         $elem->update($data);
+
+        // if (array_key_exists('courses_id', $data)) {
+        // $elem->course()->sync($elem);
+        // } else {
+        //     $elem->course()->sync([]);
+        // }
+
         return redirect()->route('admin.exams.show', $elem->id);
     }
 
